@@ -406,30 +406,31 @@
       </section>
       <section class="employment-form-section">
         <h2 style="color:#FFD700;text-align:center;margin-bottom:1.2rem;">Employment Application</h2>
-        <form class="employment-form" name="employment" method="POST" data-netlify="true" data-netlify-recaptcha="true" enctype="multipart/form-data">
-          <input type="hidden" name="form-name" value="employment">
-          <label for="fullname">Full Name</label>
-          <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name">
-      
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="email" required placeholder="Enter your email address">
-      
-          <label for="phone">Phone Number</label>
-          <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
-      
-          <label for="position">Position Interested In</label>
-          <input type="text" id="position" name="position" required placeholder="e.g. Chef, Waiter, Manager, Delivery Person">
-      
-          <label for="cv">Upload CV</label>
-          <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
-      
-          <label for="coverletter">Cover Letter</label>
-          <textarea id="coverletter" name="coverletter" rows="4" placeholder="Write a brief cover letter (optional)"></textarea>
-      
-          <div data-netlify-recaptcha="true" style="margin:1.2rem 0;"></div>
-      
-          <button type="submit">Submit Application</button>
-        </form>
+        <form class="employment-form" name="employment" method="POST" data-netlify="true" data-netlify-recaptcha="true" enctype="multipart/form-data" action="thankyou.html">
+            <input type="hidden" name="form-name" value="employment">
+            <input type="hidden" name="page" value="career">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name">
+          
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+          
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+          
+            <label for="position">Position Interested In</label>
+            <input type="text" id="position" name="position" required placeholder="e.g. Chef, Waiter, Manager, Delivery Person">
+          
+            <label for="cv">Upload CV</label>
+            <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+          
+            <label for="coverletter">Cover Letter</label>
+            <textarea id="coverletter" name="coverletter" rows="4" placeholder="Write a brief cover letter (optional)"></textarea>
+          
+            <div data-netlify-recaptcha="true" style="margin:1.2rem 0;"></div>
+          
+            <button type="submit">Submit Application</button>
+          </form>
       </section>
       <style>
       .employment-form-section {
