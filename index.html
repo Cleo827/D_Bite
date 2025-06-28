@@ -1,0 +1,2247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delux Bite</title>
+  <meta name="description" content="Delux Bite - Delicious food delivered fast in Jos, Bokkos, and Plateau State. Order online, reserve, and enjoy our tasty menu!">
+  <meta property="og:title" content="Delux Bite">
+  <meta property="og:description" content="Delux Bite - Delicious food delivered fast in Jos, Bokkos, and Plateau State. Order online, reserve, and enjoy our tasty menu!">
+  <meta property="og:image" content="assets/log.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="assets/log.jpg" />
+  <style>
+    /* General Styles
+html { scroll-behavior: smooth; }
+body {
+  background: #fff;
+  color: #222;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Section Backgrounds and Colors */
+.about-section,
+.testimonials-section,
+.faq-section,
+.contact-address,
+.pricing-section,
+.reservation-section {
+  color: #222 !important;
+  background: #fffbe7;
+}
+.newsletter-section,
+.footer {
+  background: #222 !important;
+  color:white!important;
+}
+.testimonials-title,
+.faq-title,
+.about-section h2,
+.pricing-title,
+.reservation-title {
+  color: #b8860b !important;
+}
+.testimonials-list .testimonial-item {
+  color: #222 !important;
+  background: #fff8e1;
+}
+.faq-item h3 {
+  color: goldenrod !important;
+}
+.faq-item p {
+  color: green !important;
+}
+.reservation-text,
+.about-section p,
+.contact-address,
+.pricing-section {
+  color: #222 !important;
+}
+.user-bar {
+  background: #222 !important;
+  color: goldenrod !important;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem 0 2rem;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1100;
+}
+#Login-btn {
+  background: goldenrod;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+#Login-btn:hover {
+  background: darkorange;
+}
+
+/* Navbar */
+header {
+  background: #fff8e1;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.08);
+  padding: 0.5rem 0;
+}
+/* .logo-nav-container nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  /* flex-wrap: nowrap; /* Prevent wrapping */
+*/
+/* .logo-nav-container nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.7rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: nowrap; /* Prevent wrapping */
+} */ */
+.nav-dark-btn {
+  background: none;
+  border: none;
+  color: #b8860b;
+  font-size: 1.3rem;
+  margin-left: 10px;
+  cursor: pointer;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  vertical-align: middle;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.nav-dark-btn:hover,
+body.dark-mode .nav-dark-btn:hover {
+  background: #ffd966;
+  color: #222;
+}
+body.dark-mode .nav-dark-btn {
+  color: #FFD700;
+}
+
+@media (max-width: 200px) {
+  .logo-nav-container nav {
+    gap: 0.1rem;
+    flex-wrap: nowrap;
+  }
+  .logo-nav-container nav ul {
+    gap: 0.1rem;
+    flex-wrap: nowrap;
+  }
+  .logo-nav-container nav ul li a {
+    font-size: 0.85rem;
+    padding: 0.1rem 0.18rem;
+  }
+  .nav-dark-btn {
+    font-size: 1rem;
+    margin-left: 2px;
+    padding: 0.1rem 0.2rem;
+  }
+}
+
+/* Hero Section */
+
+/* ...existing code... */
+.hero-section {
+  background: url('assets/cc.jpg') center center/cover no-repeat;
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(218,165,32,0.08);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order-button {
+  background: linear-gradient(90deg, goldenrod 60%, orange 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.08);
+  transition: background 0.3s, transform 0.2s;
+  color: #fff !important;
+}
+.order-button:hover {
+  background: linear-gradient(90deg, orange 60%, goldenrod 100%);
+  transform: scale(1.07);
+}
+
+/* Popular Section */
+.popular-section {
+  max-width: 900px;
+  margin: 0.2rem auto 0 auto;
+  padding: 0.2rem;
+}
+.section-title {
+  color: #b8860b;
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.image-item img {
+  width: 130px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.08);
+  background: #fff;
+}
+
+/* Pricing Table */
+.pricing-section {
+  margin: 3rem auto 2rem auto;
+  max-width: 800px;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(218,165,32,0.08);
+  padding: 2rem 1rem;
+}
+.pricing-title {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+.table-wrapper {
+  overflow-x: auto;
+}
+.menu-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.08);
+}
+.menu-table th, .menu-table td {
+  padding: 1rem 0.7rem;
+  text-align: center;
+}
+.menu-table th {
+  color: #fff !important;
+  background: goldenrod !important;
+}
+.menu-table td {
+  color: #222 !important;
+}
+.menu-table tr:nth-child(even) {
+  background: #fffbe7;
+}
+.menu-table tr:nth-child(odd) {
+  background: #fff;
+}
+.add-to-cart-btn {
+  background: linear-gradient(90deg, goldenrod 60%, orange 100%);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 18px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.08);
+  transition: background 0.3s, transform 0.2s;
+  color: #fff !important;
+}
+.add-to-cart-btn:hover {
+  background: linear-gradient(90deg, orange 60%, goldenrod 100%);
+  transform: scale(1.07);
+}
+
+/* Cart Sidebar */
+#cart-sidebar {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  background: #222;
+  color: #fff;
+  z-index: 2000;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+  padding: 1.5rem 1rem 1rem 1rem;
+  overflow-y: auto;
+  transition: right 0.3s;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+#cart-sidebar h3 {
+  color: goldenrod;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+}
+#cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+#cart-items li {
+  margin-bottom: 0.7rem;
+  border-bottom: 1px solid #444;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#cart-sidebar button,
+#cart-items button {
+  background: goldenrod;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background 0.3s;
+  color: #fff !important;
+}
+#cart-sidebar button:hover,
+#cart-items button:hover {
+  background: darkorange;
+}
+#cart-total {
+  font-weight: bold;
+  color: #fff;
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}
+
+/* Floating Action Buttons (FAB) - Profile, Cart, Scroll Up, WhatsApp */
+#user-avatar-container {
+  position: fixed;
+  top: 50%;
+  right: 24px;
+  left: auto;
+  transform: translateY(-50%);
+  width: 54px;
+  height: 54px;
+  z-index: 3000;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.12);
+  padding: 0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#user-avatar-container .user-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid goldenrod;
+  background: #fff;
+  box-shadow: none;
+  transition: box-shadow 0.2s;
+  display: block;
+}
+#user-avatar-container .user-avatar:hover {
+  box-shadow: 0 4px 16px rgba(218,165,32,0.25);
+}
+#open-cart-btn {
+  position: fixed;
+  top: calc(50% + 70px);
+  right: 24px;
+  width: 54px;
+  height: 54px;
+  font-size: 1.7rem;
+  z-index: 3000;
+  background: goldenrod;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+#open-cart-btn .cart-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: red;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  z-index: 2;
+  display: none;
+}
+#back-to-top {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  width: 54px;
+  height: 54px;
+  font-size: 1.7rem;
+  z-index: 4000;
+  background: goldenrod;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+}
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 54px;
+  height: 54px;
+  background: #25D366;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  padding: 0;
+}
+
+/* Info Sections */
+.info-sections-wrapper {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+}
+.info-sections-wrapper > section,
+.info-sections-wrapper > .contact-address {
+  flex: 1 1 320px;
+  min-width: 300px;
+  max-width: 370px;
+  margin: 0;
+  box-sizing: border-box;
+}
+.about-section,
+.testimonials-section,
+.faq-section,
+.contact-address {
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(218,165,32,0.08);
+  padding: 2rem 1rem;
+  font-size: 1.1rem;
+  margin: 0;
+  text-align: center;
+}
+.about-section h2,
+.testimonials-title,
+.faq-title {
+  margin-bottom: 1rem;
+}
+.testimonials-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.testimonial-item {
+  background: #fff8e1;
+  border-radius: 10px;
+  padding: 1rem;
+  color: #222;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.08);
+}
+.testimonial-item span {
+  display: block;
+  margin-top: 0.5rem;
+  color: goldenrod;
+  font-size: 0.95rem;
+}
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  text-align: left;
+}
+.faq-item h3 {
+  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  user-select: none;
+}
+.faq-item p {
+  margin: 0;
+  font-size: 1rem;
+  display: none;
+  transition: all 0.3s;
+}
+.contact-address {
+  padding: 2rem 1rem;
+  font-size: 1.1rem;
+  margin: 0;
+  text-align: center;
+}
+
+/* Newsletter */
+.newsletter-section {
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  padding: 2rem 1rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  text-align: center;
+}
+.newsletter-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  margin-right: 8px;
+  width: 60%;
+  max-width: 220px;
+}
+.newsletter-form button {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  background: goldenrod;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  color: #fff;
+}
+.newsletter-form button:hover {
+  background: darkorange;
+}
+.newsletter-success {
+  color: green;
+  margin-top: 1rem;
+  font-weight: bold;
+  display: none;
+}
+
+/* Social Links */
+.social-links {
+  text-align: center;
+  margin: 1.5rem 0 0.5rem 0;
+}
+.social-links a {
+  text-decoration: none;
+  margin: 0 8px;
+  font-weight: bold;
+  transition: color 0.2s;
+  color: goldenrod !important;
+}
+.social-links a:hover {
+  color: darkorange !important;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.4);
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: #fffbe7;
+  color: #222;
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
+  text-align: center;
+  min-width: 260px;
+  max-width: 90vw;
+}
+.modal-content button {
+  margin-top: 1rem;
+  background: goldenrod;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.modal-content button:hover {
+  background: darkorange;
+}
+
+
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  #user-avatar-container {
+    right: 12px;
+    width: 44px;
+    height: 44px;
+  }
+  #user-avatar-container .user-avatar {
+    width: 38px;
+    height: 38px;
+  }
+  #open-cart-btn {
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+    top: calc(50% + 50px);
+  }
+  #back-to-top {
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+    bottom: 60px;
+  }
+  .whatsapp-float {
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    bottom: 12px;
+  }
+  .oval-image {
+    width: 40px;
+    height: 40px;
+  }
+}@media (max-width: 600px) {
+  #user-avatar-container {
+    right: 12px;
+    width: 44px;
+    height: 44px;
+  }
+  #user-avatar-container .user-avatar {
+    width: 38px;
+    height: 38px;
+  }
+  #open-cart-btn {
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+    top: calc(50% + 50px);
+  }
+  #back-to-top {
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
+    bottom: 60px;
+  }
+  .whatsapp-float {
+    right: 12px;
+    width: 44px;
+    height: 44px;
+    bottom: 12px;
+  }
+}
+
+/* Make Feedback button text black in navbar */
+.feedback-link {
+  color: #000 !important;
+  background: #ffd966 !important; /* Optional: add a light background for contrast */
+}
+body.dark-mode {
+  background: #181818;
+  color: #fff;
+}
+body.dark-mode .footer,
+body.dark-mode .newsletter-section,
+body.dark-mode .about-section,
+body.dark-mode .testimonials-section,
+body.dark-mode .faq-section,
+body.dark-mode .contact-address,
+body.dark-mode .pricing-section,
+body.dark-mode .reservation-section {
+  background: #222 !important;
+  color: #fff !important;
+}
+body.dark-mode header {
+  background: #222 !important;
+}
+body.dark-mode .section-title,
+body.dark-mode .pricing-title,
+body.dark-mode .testimonials-title,
+body.dark-mode .faq-title {
+  color: #FFD700 !important;
+}
+body.dark-mode .order-button,
+body.dark-mode .add-to-cart-btn,
+body.dark-mode #open-cart-btn,
+body.dark-mode #back-to-top {
+  background: #FFD700 !important;
+  color: #222 !important;
+}
+
+body.dark-mode .about-section {
+  color: #fff !important;
+}
+body.dark-mode .hero-section,
+body.dark-mode .hero-section .hero-content,
+body.dark-mode .hero-section .hero-content h1,
+body.dark-mode .hero-section .hero-content h2,
+body.dark-mode .hero-section .hero-content p {
+  color: #fff !important;
+  text-shadow: 0 2px 8px #222, 0 1px 2px #000;
+}
+/* Make hero section text always white */
+.hero-section,
+.hero-section .hero-content,
+.hero-section .hero-content h1,
+.hero-section .hero-content h2,
+.hero-section .hero-content p {
+  color: #fff !important;
+  text-shadow: 0 2px 8px #222, 0 1px 2px #000;
+}
+
+.nav-dark-btn {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 1.3rem;
+  margin-left: 10px;
+  cursor: pointer;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+  vertical-align: middle;
+}
+.nav-dark-btn:hover,
+body.dark-mode .nav-dark-btn:hover {
+  background: #ffd966;
+  color: #222;
+}
+body.dark-mode .about-section,
+body.dark-mode .about-section *,
+body.dark-mode .about-section p,
+body.dark-mode .about-section h2,
+body.dark-mode .about-section a {
+  color: #fff !important;
+}
+body.dark-mode .reservation-text {
+  color: #fff !important;
+}
+body.dark-mode .hero-content h2,
+body.dark-mode .hero-content p {
+  color:goldenrod !important;
+}
+body.dark-mode .hero-content p {
+  /* If you want the "Do you Have a Special Request?" text extra bold: */
+  font-weight: 600;
+}
+body.dark-mode .hero-content h1 {
+  color: #FFD700 !important;
+  text-shadow: 0 0 2px #222, 1px 1px 2px #000;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  margin-right: 18px;
+  text-decoration: none;
+}
+.logo-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.logo-nav-container nav {
+  flex: 1;
+}
+/* Add this to your style block */
+.logo-nav-container nav {
+  position: relative;
+}
+/* Hamburger hidden by default, shown on small screens */
+.hamburger {
+  display: left;
+  flex-direction: column;
+  justify-content: left;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  z-index: 1201;
+}
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 28px;
+  background: #b8860b;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+/* @media (max-width: 800px) {
+  .logo-nav-container .site-logo {
+    display: none !important;
+  } */
+
+  @media (max-width: 800px) {
+  .logo-nav-container .site-logo {
+    display: flex !important;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+  }
+}
+  .logo-nav-container nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 18px;
+    background: #fffbe7;
+    box-shadow: 0 4px 24px rgba(218,165,32,0.12);
+    border-radius: 10px;
+    width: 180px;
+    padding: 1rem 0;
+    z-index: 1200;
+  }
+  .logo-nav-container nav ul.open {
+    display: flex;
+  }
+  .hamburger {
+    display: flex;
+  }
+
+
+.happy-customers-section {
+  background: #fffbe7;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(218,165,32,0.08);
+  padding: 2rem 1rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  text-align: center;
+}
+.happy-customers-title {
+  color: #b8860b;
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  letter-spacing: 1px;
+}
+.happy-customers-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.happy-customer-image {
+  width: 180px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.12);
+  background: #fff;
+  transition: transform 0.2s;
+}
+.happy-customer-image:hover {
+  transform: scale(1.05);
+}
+.happy-customer-video {
+  width: 240px;
+  height: 140px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.12);
+  background: #fff;
+  outline: none;
+}
+@media (max-width: 700px) {
+  .happy-customers-gallery {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .happy-customer-image,
+  .happy-customer-video {
+    width: 95vw;
+    max-width: 340px;
+    height: 180px;
+  }
+}
+
+.contact-form-section {
+  background: #fffbe7;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(218,165,32,0.08);
+  padding: 2rem 1rem;
+  margin: 2rem auto;
+  max-width: 700px;
+  text-align: center;
+}
+.contact-form-section h2 {
+  color: #b8860b;
+  margin-bottom: 1.2rem;
+
+}
+
+/* --- Gallery Layout --- */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.image-item {
+  width: 150px;
+  background: #fffbe7;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.10);
+  overflow: hidden;
+  transition: transform 0.18s;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-item img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+  display: block;
+  background: #fff;
+}
+
+/* Place price and cart icon below the image */
+.menu-overlay {
+  position: static;
+  margin-top: 0.5rem;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255,255,255,0.95);
+  border-radius: 8px;
+  padding: 6px 12px;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.10);
+}
+
+.menu-price {
+  color: #b8860b;
+  font-weight: bold;
+  font-size: 1.05rem;
+}
+
+.menu-cart-btn {
+  background: goldenrod;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.10);
+}
+.menu-cart-btn:hover {
+  background: orange;
+  transform: scale(1.1);
+}
+
+/* Responsive for mobile */
+@media (max-width: 700px) {
+  .image-gallery {
+    gap: 0.7rem;
+  }
+  .image-item {
+    width: 44vw;
+    min-width: 130px;
+    max-width: 180px;
+  }
+  .image-item img {
+    height: 90px;
+  }
+  .menu-overlay {
+    width: 96%;
+    padding: 6px 6px;
+  }
+}
+
+.contact-button {
+  display: inline-block;
+  background: linear-gradient(90deg, goldenrod 60%, orange 100%);
+  color: #fff !important;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  text-decoration: none;
+  margin-top: 1.2rem;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.10);
+  transition: background 0.3s, transform 0.2s;
+  cursor: pointer;
+}
+.contact-button:hover {
+  background: linear-gradient(90deg, orange 60%, goldenrod 100%);
+  color: #fff !important;
+  transform: scale(1.07);
+  text-decoration: none;
+}
+
+@media (max-width: 700px) {
+  .image-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem;
+    justify-items: center;
+  }
+  .image-item {
+    width: 95%;
+    min-width: 0;
+    max-width: 180px;
+    margin-bottom: 1rem;
+  }
+  .image-item img {
+    height: 90px;
+  }
+  .menu-overlay {
+    width: 96%;
+    padding: 6px 6px;
+  }
+}
+
+.animated-gallery-section {
+  background: #fffbe7;
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(218,165,32,0.08);
+  padding: 2rem 1rem;
+  margin: 2rem auto;
+  max-width: 900px;
+  text-align: center;
+}
+.animated-gallery {
+  position: relative;
+  min-height: 180px;
+}
+.gallery-image {
+  width: 320px;
+  max-width: 95vw;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.12);
+  margin: 0 auto;
+  display: none;
+  transition: opacity 0.5s;
+}
+@media (max-width: 700px) {
+  .gallery-image {
+    width: 95vw;
+    height: 140px;
+  }
+}
+
+.gallery-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+.gallery-nav-btn {
+  background: goldenrod;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.12);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  pointer-events: auto;
+  opacity: 0.92;
+}
+.gallery-nav-btn:hover {
+  background: orange;
+  transform: scale(1.1);
+}
+@media (max-width: 700px) {
+  .gallery-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 1.5rem;
+  }
+}
+
+.order-online-banner {
+  display: flex;
+  align-items: center;
+  background: #FF2D2D;
+  border-radius: 6px 6px 0 0;
+  padding: 0.7rem 1.3rem 0 0.7rem;
+  margin-left: auto;
+  margin-right: 0;
+  box-shadow: 0 2px 8px rgba(218,165,32,0.10);
+  position: relative;
+  z-index: 10;
+  min-width: 210px;
+  max-width: 270px;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+}
+.order-online-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 12px;
+}
+.order-online-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  display: block;
+}
+.order-online-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.order-online-hours {
+  display: block;
+  width: 100%;
+  background: #FFD700;
+  color: #FF2D2D;
+  font-size: 1.15rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 0 0 4px 4px;
+  margin-top: 6px;
+  padding: 2px 0 2px 0;
+  letter-spacing: 1px;
+}
+@media (max-width: 900px) {
+  .order-online-banner {
+    min-width: 160px;
+    padding: 0.5rem 0.7rem 0 0.5rem;
+  }
+  .order-online-title {
+    font-size: 1.1rem;
+  }
+  .order-online-hours {
+    font-size: 0.97rem;
+  }
+}
+@media (max-width: 600px) {
+  .order-online-banner {
+    min-width: 120px;
+    padding: 0.3rem 0.3rem 0 0.3rem;
+    margin: 0 auto 0 0;
+  }
+  .order-online-title {
+    font-size: 1rem;
+  }
+}
+
+.main-header {
+  width: 100%;
+  background: #bcc3c7; /* light gray */
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100vw;
+  padding: 0 0;
+  height: 90px;
+}
+.site-logo {
+  display: flex;
+  align-items: center;
+  background: #FF2D2D;
+  height: 100%;
+  padding: 0 32px;
+}
+.logo-img {
+  height: 70px;
+  width: auto;
+  border-radius: 0;
+  background: none;
+}
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 32px;
+}
+.main-nav ul li a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+.main-nav ul li a:hover {
+  color: #FFD700;
+}
+.order-online-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FF2D2D;
+  border-radius: 0 0 0 0;
+  margin-right: 0;
+  min-width: 220px;
+  max-width: 260px;
+  margin-left: 24px;
+  margin-top: 0;
+  box-shadow: none;
+  padding: 0.7rem 1.3rem 0 0.7rem;
+  position: relative;
+}
+.order-online-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order-online-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  display: block;
+  margin-top: 0.2rem;
+  text-align: left;
+}
+.order-online-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.order-online-hours {
+  display: block;
+  width: 100%;
+  background: #FFD700;
+  color: #FF2D2D;
+  font-size: 1.15rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 0 0 0 0;
+  margin-top: 6px;
+  padding: 2px 0 2px 0;
+  letter-spacing: 1px;
+}
+@media (max-width: 1100px) {
+  .main-nav ul {
+    gap: 1rem;
+    padding-left: 8px;
+  }
+  .site-logo {
+    padding: 0 10px;
+  }
+  .order-online-banner {
+    min-width: 160px;
+    padding: 0.5rem 0.7rem 0 0.5rem;
+  }
+}
+@media (max-width: 800px) {
+  .nav-bar {
+    flex-direction: column;
+    height: auto;
+  }
+  .main-nav ul {
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0;
+  }
+  .order-online-banner {
+    margin: 12px 0 0 0;
+    align-self: flex-end;
+  }
+}
+
+/* Add to your style block or style.css */
+
+/* Hamburger hidden by default, shown on small screens */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  z-index: 1201;
+}
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 28px;
+  background: #b8860b;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Responsive nav for small screens */
+@media (max-width: 900px) {
+  .nav-bar {
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    padding: 0 0.5rem;
+    position: relative;
+  }
+  @media (max-width: 900px) {
+  .main-nav ul {
+    background: #222; /* or #fffbe7 or any color you want */
+  }
+  .main-nav ul li a {
+    color: #fff; /* for dark background */
+  }
+}
+  .site-logo {
+    padding: 0 8px;
+    min-width: 60px;
+  }
+  .logo-img {
+    height: 48px;
+  }
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+    margin-right: 8px;
+  }
+  .main-nav {
+    width: 100%;
+  }
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background:black;
+    box-shadow: 0 4px 24px rgba(218,165,32,0.12);
+    border-radius: 10px;
+    width: 180px;
+    padding: 1rem 0;
+    z-index: 1200;
+    gap: 0;
+    align-items: flex-start;
+  }
+  .main-nav ul.open {
+    display: flex;
+  }
+  .main-nav ul li {
+    margin: 0.5rem 0;
+    text-align: left;
+    width: 100%;
+    padding-left: 1.2rem;
+  }
+  .order-online-banner {
+    min-width: 120px;
+    max-width: 160px;
+    padding: 0.3rem 0.3rem 0 0.3rem;
+    margin: 0 0 0 8px;
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+  .order-online-title {
+    font-size: 1rem;
+  }
+  .order-online-hours {
+    font-size: 0.97rem;
+  }
+}
+
+/* Always show nav horizontally on desktop */
+@media (min-width: 901px) {
+  .main-nav ul {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    width: auto;
+    padding: 0 0 0 32px;
+    gap: 2.2rem;
+    align-items: center;
+  }
+  .hamburger {
+    display: none !important;
+  }
+}
+
+/* Make sure order banner doesn't break layout on mobile */
+@media (max-width: 600px) {
+  .order-online-banner {
+    min-width: 100px;
+    max-width: 120px;
+    padding: 0.2rem 0.2rem 0 0.2rem;
+    font-size: 0.85rem;
+  }
+  .order-online-title {
+    font-size: 0.85rem;
+  }
+  .order-online-hours {
+    font-size: 0.85rem;
+  }
+}
+
+.app-download-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+.store-badge {
+  height: 54px;
+  max-width: 180px;
+  transition: transform 0.2s;
+}
+.store-badge:hover {
+  transform: scale(1.07);
+}
+@media (max-width: 600px) {
+  .store-badge {
+    height: 40px;
+    max-width: 140px;
+  }
+}
+
+.happy-customers-gallery,
+.happy-customers-cta-block,
+.app-download-buttons 
+.happy-customers-title{
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+</style>
+
+  
+
+
+
+  <!-- Google Analytics (example, replace with your own ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+
+    </script>
+</head>
+<body>
+  
+  <div id="user-avatar-container">
+    <label for="user-avatar-input" title="Upload your picture" aria-label="Upload your picture">
+      <img id="user-avatar" src="assets/default-avatar.png" alt="Your Profile Picture" class="user-avatar" />
+      <input type="file" id="user-avatar-input" accept="image/*" style="display:none;">
+    </label>
+  </div>
+
+ 
+ 
+
+  <!-- Order Confirmation Modal -->
+  <div id="order-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="order-modal-title">
+    <div class="modal-content">
+      <h3 id="order-modal-title">Added to Cart!</h3>
+      <p id="order-modal-msg">Your item has been added to the cart.</p>
+      <button onclick="document.getElementById('order-modal').style.display='none'">OK</button>
+    </div>
+  </div>
+
+  <!-- HEADER SECTION -->
+  <header class="main-header">
+    <div class="nav-bar">
+      <a href="index.html" class="site-logo" aria-label="Home">
+        <img src="assets/log.jpg" alt="Logo" class="logo-img">
+      </a>
+      <!-- Hamburger button for mobile -->
+      <button class="hamburger" id="hamburger-menu" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav">
+        <ul id="main-nav">
+         <li><a href="#">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="promo.html">Promo</a></li>
+          <li><a href="#reservation">Reservation</a></li>
+          <li><a href="second.html">Feedback</a></li>
+          <li><a href="#FAQ">FAQ</a></li>
+          <li><a href="career.html">Career</a></li>
+         
+        </ul>
+      </nav>
+      <div class="order-online-banner">
+        <span class="order-online-icon">
+          <!-- ...SVG icon... -->
+        </span>
+        <div class="order-online-text">
+          <span class="order-online-title">ORDER<br>ONLINE TIME</span>
+          <span class="order-online-hours">9am - 4:30pm daily</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="home">
+    <div class="hero-content">
+      <h1>DELUX BITE</h1>
+      <h2>Delicious Food, Delivered Fast!</h2>
+      <p>Enjoy Good Food in a Few Clicks</p>
+        <a href="order.html" aria-label="Order Now">
+              <button class="order-button">Order Now</button>
+      </a>
+    </div>
+  </section>
+
+  <!-- Add this where you want the download buttons to appear -->
+<div class="app-download-buttons">
+  <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank" rel="noopener" aria-label="Download on the App Store">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge">
+  </a>
+  <a href="https://play.google.com/store/apps/details?id=XXXXXXXXX" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="store-badge">
+  </a>
+</div>
+
+  <section class="animated-gallery-section">
+    <h2 class="testimonials-title">TASTE THE LOVE - TASTE THE COMBO</h2>
+    <div class="animated-gallery" id="animated-gallery-carousel">
+      <img src="assets/69-Soft-drinks.jpg" alt="Restaurant Interior" class="gallery-image" style="display:block;">
+      <img src="assets/drink 1.jpg" alt="Happy Customer" class="gallery-image" style="display:none;">
+      <img src="assets/drink 2.jpg" alt="Happy Group" class="gallery-image" style="display:none;">
+      <img src="assets/drink 3.jpg" alt="Happy Group" class="gallery-image" style="display:none;">
+      <!-- Add more images as needed -->
+      <div class="gallery-nav">
+        <button id="prev-gallery" aria-label="Previous Image" class="gallery-nav-btn">‹</button>
+        <button id="next-gallery" aria-label="Next Image" class="gallery-nav-btn">›</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- POPULAR MENU -->
+   <section class="popular-section" id="menu">
+  <h2 class="section-title">EVERYDAY AFFORDABLE VALUE MEALS</h2>
+  <div class="image-gallery">
+    <div class="image-item">
+      <img src="assets/burga.jpg" alt="Burga" loading="lazy">
+      <div class="menu-overlay">
+        <span class="menu-price">₦4,500</span>
+        <button class="menu-cart-btn" data-name="Burga" data-price="3500" aria-label="Add Burga to Cart">🛒</button>
+      </div>
+    </div>
+    <div class="image-item">
+      <img src="assets/chicken wigs.jpg" alt="Chicken Wings" loading="lazy">
+      <div class="menu-overlay">
+        <span class="menu-price">₦3,000</span>
+        <button class="menu-cart-btn" data-name="Chicken Wings" data-price="3000" aria-label="Add Chicken Wings to Cart">🛒</button>
+      </div>
+    </div>
+    <div class="image-item">
+      <img src="assets/chiken.jpg" alt="Grilled Chicken" loading="lazy">
+      <div class="menu-overlay">
+        <span class="menu-price">₦3,500</span>
+        <button class="menu-cart-btn" data-name="Grilled Chicken" data-price="3500" aria-label="Add Grilled Chicken to Cart">🛒</button>
+      </div>
+    </div>
+    <div class="image-item">
+      <img src="assets/chips.jpg" alt="Chips" loading="lazy">
+      <div class="menu-overlay">
+        <span class="menu-price">₦1,500</span>
+        <button class="menu-cart-btn" data-name="Chips" data-price="3500" aria-label="Add Chips to Cart">🛒</button>
+      </div>
+    </div>
+    <div class="image-item">
+      <img src="assets/spagiti.jpg" alt="Spaghetti" loading="lazy">
+      <div class="menu-overlay">
+        <span class="menu-price">₦1,500</span>
+        <button class="menu-cart-btn" data-name="Spaghetti" data-price="3500" aria-label="Add Spaghetti to Cart">🛒</button>
+      </div>
+    </div>
+    <div class="image-item">
+      <img src="assets/perperoni pizza.jpg" alt="Perperoni Pizza" loading="lazy">
+      <div class="menu-overlay">
+        <span class="menu-price">₦6,500</span>
+        <button class="menu-cart-btn" data-name="Perperoni Pizza" data-price="3500" aria-label="Add Perperoni Pizza to Cart">🛒</button>
+      </div>
+    </div>
+    <div class="image-item">
+      <img src="assets/peper soup.jpg" alt="Peper Soup" loading="lazy">
+      <div class="menu-overlay">
+        <span class="menu-price">₦2,500</span>
+        <button class="menu-cart-btn" data-name="Peper Soup" data-price="3500" aria-label="Add Peper Soup to Cart">🛒</button>
+      </div>
+    </div>
+    <div class="image-item">
+      <img src="assets/egusi.png" alt="Egusi" loading="lazy">
+      <div class="menu-overlay">
+        <span class="menu-price">₦1,500</span>
+        <button class="menu-cart-btn" data-name="Egusi" data-price="3500" aria-label="Add Egusi to Cart">🛒</button>
+      </div>
+    </div>
+    <div class="image-item">
+      <img src="assets/okoro.jpg" alt="Okoro" loading="lazy">
+      <div class="menu-overlay">
+        <span class="menu-price">₦1,500</span>
+        <button class="menu-cart-btn" data-name="Okoro" data-price="3500" aria-label="Add Okoro to Cart">🛒</button>
+      </div>
+    </div>
+    <div class="image-item">
+      <img src="assets/ogbono_788x.webp" alt="Ogbono" loading="lazy">
+      <div class="menu-overlay">
+        <span class="menu-price">₦1,500</span>
+        <button class="menu-cart-btn" data-name="Ogbono" data-price="3500" aria-label="Add Ogbono to Cart">🛒</button>
+      </div>
+    </div>
+    <div class="image-item">
+      <img src="assets/fried rice.jpg" alt="Fried Rice" loading="lazy">
+      <div class="menu-overlay">
+        <span class="menu-price">₦3,500</span>
+        <button class="menu-cart-btn" data-name="Fried Rice" data-price="3500" aria-label="Add Fried Rice to Cart">🛒</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    <!-- RESERVATION SECTION -->
+  <section class="reservation-section" id="reservation">
+    <h2 class="reservation-title">Reservation</h2>
+    <p class="reservation-text">
+      Do you have an upcoming event? Worry less, we've got you covered! We have a beautiful ambience tailored to your taste.
+    </p>
+    <div class="reservation-button-container">
+      <a href="Reservataion.html" class="reservation-button" aria-label="Reserve Now">Reserve Now</a>
+    </div>
+    <img src="assets/interior.jpg" alt="Restaurant Interior" class="interior-image" loading="lazy">
+    <img src="assets/1.jpg" alt="Restaurant Ambience" class="interior-image" loading="lazy">
+  </section>
+
+
+  <section class="happy-customers-section">
+    
+    <div class="happy-customers-gallery" style="justify-content: center; text-align: center;">
+      <img src="assets/happy 1.jpg" alt="Smiling Customer" class="happy-customer-image" loading="lazy">
+      <img src="assets/happy 2.jpg" alt="Happy Group" class="happy-customer-image" loading="lazy">
+      <video class="happy-customer-video" src="assets/vid 1.mp4" controls poster="assets/happy 1.jpg">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <div class="happy-customers-cta-block" style="align-items: center; text-align: center;">
+      <p class="happy-customers-cta">
+        What are you waiting for? <br>
+        <strong>Book a reservation with us today and join our happy customers!</strong>
+      </p>
+      <a href="Reservataion.html" class="reservation-button" aria-label="Reserve Now">Reserve Now</a>
+    </div>
+    <div class="app-download-buttons" style="justify-content: center;">
+      <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank" rel="noopener" aria-label="Download on the App Store">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge">
+      </a>
+      <a href="https://play.google.com/store/apps/details?id=XXXXXXXXX" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="store-badge">
+      </a>
+    </div>
+  </section>
+    
+
+  <!-- ABOUT, TESTIMONIALS, FAQ, CONTACT SIDE BY SIDE -->
+  <div class="info-sections-wrapper">
+    <!-- ABOUT US SECTION (with CONTACT below) -->
+    <section class="about-section">
+      <h2>About Delux Bite</h2>
+      <p>Delux Bite is committed to delivering delicious, high-quality meals to your doorstep with speed and care. Our chefs use only the freshest ingredients to create dishes you'll love.</p>
+      <!-- In your About section, near the email address, add this: -->
+      <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-top: 10px;">
+        <img src="assets/owner.jpg" alt="Contact Person" class="oval-image" loading="lazy">
+        <div style="text-align:left;">
+          <div><strong>Email:</strong> <a href="mailto:info@deluxbite.com" style="color:inherit;text-decoration:underline;">info@deluxbite.com</a></div>
+        </div>
+      </div>
+      <!-- Google Maps Embed -->
+      <iframe src="https://www.google.com/maps?q=Jos+Bokkos+Plateau+State+Nigeria&output=embed" width="100%" height="120" style="border:0;border-radius:10px;margin-top:1rem;" allowfullscreen="" loading="lazy" title="Delux Bite Location"></iframe>
+      
+      <!-- Add this where you want the download buttons to appear -->
+<div class="app-download-buttons">
+  <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank" rel="noopener" aria-label="Download on the App Store">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge">
+  </a>
+  <a href="https://play.google.com/store/apps/details?id=XXXXXXXXX" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="store-badge">
+  </a>
+</div>
+      
+      <!-- CONTACT SECTION inside About -->
+      <div class="contact-address" id="contact" style="margin-top:1rem;">
+        <u><strong>Contact Address:</strong><br></u>
+        jos road tudu,<br>
+        Bokkos Plateau State, Nigeria<br>
+        Phone: <a href="tel:+2348102408183" style="color:inherit;text-decoration:underline;">+234 2348102408183</a><br>
+        Email: <a href="mailto:info@deluxbite.com" style="color:inherit;text-decoration:underline;">info@deluxbite.com</a>
+      </div>
+      <a href="contact.html" class="contact-button" aria-label="Contact Us">Contact Us</a>
+    </section>
+
+
+
+    <!-- TESTIMONIALS SECTION -->
+    <section class="testimonials-section">
+      <h2 class="testimonials-title">What Our Customers Say</h2>
+      <div class="testimonials-list" id="testimonials-carousel">
+        <div class="testimonial-item">
+          <p>"The food was amazing and delivery was super fast!"</p>
+          <span>- Aisha, Jos</span>
+        </div>
+        <div class="testimonial-item">
+          <p>"Great service and tasty meals. Highly recommended!"</p>
+          <span>- Emeka, Bokkos</span>
+        </div>
+        <div class="testimonial-item">
+          <p>"Me and my family had a nice time with Delux Bite. Highly recommended!"</p>
+          <span>- Sarah, Jos</span>
+        </div>
+      </div>
+      <div style="margin-top:1rem;">
+        <button id="prev-testimonial" aria-label="Previous Testimonial">‹</button>
+        <button id="next-testimonial" aria-label="Next Testimonial">›</button>
+      </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+<section class="faq-section" id="FAQ">
+  <h2 class="faq-title">Frequently Asked Questions</h2>
+  <input type="text" id="faq-search" placeholder="Search FAQ..." style="width:90%;padding:8px;border-radius:6px;border:1px solid #ccc;margin-bottom:1rem;color:#222;">
+  <div class="faq-list">
+
+    <!-- ORDERING & DELIVERY -->
+    <div class="faq-category"><h3 style="color:#b8860b;">Ordering & Delivery</h3></div>
+    <div class="faq-item">
+      <h3>How do I place an order?</h3>
+      <p>Click the "Order Now" button on the homepage or menu section, add items to your cart, and check out. You can also use the reservation feature for events.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Where do you deliver?</h3>
+      <p>We deliver to Jos, Bokkos, and surrounding areas in Plateau State, Nigeria. Please provide a detailed address when ordering.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How long does delivery take?</h3>
+      <p>Delivery typically takes 30-60 minutes depending on your location and order size. You will receive an estimated delivery time after placing your order.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is there a delivery fee?</h3>
+      <p>Delivery within Jos and Bokkos is free for orders above ₦5,000. For smaller orders or distant locations, a small delivery fee may apply.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I track my order?</h3>
+      <p>After placing your order, you will receive a confirmation message. You can contact us via WhatsApp or phone to get real-time updates on your order status.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I cancel or change my order?</h3>
+      <p>Yes, you can cancel or modify your order by contacting us immediately after placing it. Once your food is being prepared, changes may not be possible.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I order for a group or event?</h3>
+      <p>Absolutely! We cater for groups, parties, and events. Please use the reservation page or contact us directly for special arrangements and discounts.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you offer scheduled delivery?</h3>
+      <p>Yes, you can schedule your order for a later time or date during checkout.</p>
+    </div>
+
+    <!-- MENU & FOOD -->
+    <div class="faq-category"><h3 style="color:#b8860b;">Menu & Food</h3></div>
+    <div class="faq-item">
+      <h3>What is Delux Bite?</h3>
+      <p>Delux Bite is your go-to destination for delicious meals delivered fast to your door in Jos, Bokkos, and Plateau State. We offer a variety of popular dishes and easy online ordering.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you offer vegetarian or vegan options?</h3>
+      <p>Yes, we offer a variety of vegetarian and vegan dishes. Please check our menu or ask our staff for recommendations.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Are there gluten-free options?</h3>
+      <p>Yes, we have gluten-free meals available. Please look for the gluten-free label on our menu or ask our staff for assistance.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I customize my order?</h3>
+      <p>Yes, you can add special instructions or requests during checkout. We will do our best to accommodate your preferences.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you have kids’ meals?</h3>
+      <p>Yes, we offer kid-friendly meal options. Please check our menu for details.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How often do you update your menu?</h3>
+      <p>We update our menu seasonally and introduce new dishes and promos regularly. Follow us on social media for updates.</p>
+    </div>
+
+    <!-- PAYMENT & PROMOS -->
+    <div class="faq-category"><h3 style="color:#b8860b;">Payment & Promos</h3></div>
+    <div class="faq-item">
+      <h3>What payment methods do you accept?</h3>
+      <p>We accept cash on delivery and bank transfer. Online payment options are now live.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I pay online?</h3>
+      <p>Yes, online payment is available. You can also pay via bank transfer or cash on delivery.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you have special offers or discounts?</h3>
+      <p>We run special offers from time to time. Subscribe to our newsletter or follow us on social media to stay updated on our latest deals.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I use a promo code?</h3>
+      <p>You can enter your promo code during checkout to receive discounts or special offers.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I get a receipt for my order?</h3>
+      <p>Yes, a receipt will be sent to your email or WhatsApp after your order is confirmed.</p>
+    </div>
+
+    <!-- RESERVATION & EVENTS -->
+    <div class="faq-category"><h3 style="color:#b8860b;">Reservation & Events</h3></div>
+    <div class="faq-item">
+      <h3>Can I make a reservation for an event?</h3>
+      <p>Yes! Visit the Reservation section and click "Reserve Now" to book our beautiful ambience for your event.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I know my reservation is confirmed?</h3>
+      <p>After submitting your reservation, you will receive a confirmation email or WhatsApp message from our team. Please check your inbox or messages.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Can I change or cancel my reservation?</h3>
+      <p>Yes, please contact us as soon as possible if you need to change or cancel your reservation.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Do you offer group discounts for reservations?</h3>
+      <p>Yes, we offer special rates and discounts for group bookings and events. Contact us for details.</p>
+    </div>
+
+    <!-- ACCOUNT & SUPPORT -->
+    <div class="faq-category"><h3 style="color:#b8860b;">Account & Support</h3></div>
+    <div class="faq-item">
+      <h3>How do I contact customer support?</h3>
+      <p>You can reach us via the contact details at the bottom of the page, use the feedback form, or chat with a representative using the WhatsApp icon.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I give feedback?</h3>
+      <p>Click the "Feedback" link in the navigation menu to access our feedback form and share your thoughts with us.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How can I add a profile picture?</h3>
+      <p>Click on the avatar circle at the side of the page and select a picture from your gallery to upload as your profile picture.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I subscribe to the newsletter?</h3>
+      <p>Scroll down to the newsletter section on our homepage, enter your email, and click "Subscribe" to receive updates and exclusive offers.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is my personal information safe?</h3>
+      <p>Yes, your privacy is important to us. We use secure systems to protect your data and never share your information with third parties.</p>
+    </div>
+    <div class="faq-item">
+      <h3>I forgot my password. How do I reset it?</h3>
+      <p>Click on the "Forgot Password" link on the login page and follow the instructions to reset your password.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How do I update my account information?</h3>
+      <p>Log in to your account and go to your profile page to update your personal information.</p>
+    </div>
+  </div>
+</section>
+  
+  <!-- Add this where you want the download buttons to appear -->
+<div class="app-download-buttons">
+  <a href="https://apps.apple.com/app/idXXXXXXXXX" target="_blank" rel="noopener" aria-label="Download on the App Store">
+    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" class="store-badge">
+  </a>
+  <a href="https://play.google.com/store/apps/details?id=XXXXXXXXX" target="_blank" rel="noopener" aria-label="Get it on Google Play">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Get it on Google Play" class="store-badge">
+  </a>
+</div>
+
+  <!-- NEWSLETTER SECTION -->
+  <section class="newsletter-section">
+    <h2>Subscribe to Our Newsletter</h2>
+    <form class="newsletter-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required aria-label="Email Address">
+      <button type="submit" aria-label="Subscribe">Subscribe</button>
+    </form>
+    <div class="newsletter-success" id="newsletter-success">Thank you for subscribing!</div>
+  </section>
+
+  <footer class="footer">
+    
+    <div class="social-links">
+      <a href="https://facebook.com" target="_blank" aria-label="Facebook">Facebook</a> |
+      <a href="https://instagram.com" target="_blank" aria-label="Instagram">Instagram</a>
+    </div>
+    <p>&copy; 2025 Delux Bite. All rights reserved.</p>
+  </footer>
+ 
+  
+
+  </script>
+
+  <!-- Cart Sidebar -->
+  <!-- Add this inside your #cart-sidebar div, just before the Close button -->
+<!-- filepath: c:\Users\Cleo\Desktop\my webdev\deluxbite\home.html -->
+<div id="cart-sidebar" aria-label="Shopping Cart">
+  <h3>Your Cart</h3>
+  <ul id="cart-items"></ul>
+  <p id="cart-total"></p>
+  <a href="payment.html" id="pay-btn" style="display:inline-block;background:goldenrod;color:#fff;border:none;border-radius:6px;padding:10px 24px;font-weight:bold;font-size:1.1rem;cursor:pointer;margin-bottom:1rem;text-decoration:none;text-align:center;">Pay Now</a>
+  <button onclick="closeCart()" aria-label="Close Cart">Close</button>
+</div>
+  
+  <button id="open-cart-btn" title="View Cart" aria-label="View Cart">🛒<span class="cart-badge"></span></button>
+  <script>
+    // --- Cart logic with modal confirmation and cart count on icon ---
+    let cart = [];
+
+    // Update cart icon with item count
+    function updateCartIcon() {
+      const btn = document.getElementById('open-cart-btn');
+      const count = cart.reduce((sum, item) => sum + item.qty, 0);
+      let badge = btn.querySelector('.cart-badge');
+      badge.textContent = count;
+      badge.style.display = count > 0 ? 'flex' : 'none';
+    }
+
+    // Render cart items in sidebar
+    function renderCart() {
+      const ul = document.getElementById('cart-items');
+      ul.innerHTML = '';
+      let total = 0;
+      cart.forEach(item => {
+        total += item.price * item.qty;
+        const li = document.createElement('li');
+        li.innerHTML = `
+          <span>${item.name} x${item.qty}</span>
+          <button aria-label="Remove" onclick="removeFromCart('${item.name}')">✕</button>
+        `;
+        ul.appendChild(li);
+      });
+      document.getElementById('cart-total').textContent = total > 0 ? `Total: ₦${total.toLocaleString()}` : '';
+      updateCartIcon();
+    }
+
+    // Remove item from cart
+    window.removeFromCart = function(name) {
+      cart = cart.filter(item => item.name !== name);
+      renderCart();
+    };
+
+  // Also handle add-to-cart from gallery menu-cart-btn
+document.querySelectorAll('.menu-cart-btn').forEach(btn => {
+  btn.onclick = function(e) {
+    e.preventDefault();
+    const name = this.getAttribute('data-name');
+    const price = parseInt(this.getAttribute('data-price'), 10);
+    // Check if item already in cart
+    const found = cart.find(item => item.name === name);
+    if (found) {
+      found.qty += 1;
+    } else {
+      cart.push({ name, price, qty: 1 });
+    }
+    renderCart();
+    // Show modal
+    document.getElementById('order-modal').style.display = 'flex';
+    setTimeout(() => {
+      document.getElementById('order-modal').style.display = 'none';
+    }, 1500);
+  };
+});
+
+    // Cart sidebar open/close
+    function closeCart() {
+      document.getElementById('cart-sidebar').style.display = 'none';
+    }
+    document.getElementById('open-cart-btn').onclick = function() {
+      document.getElementById('cart-sidebar').style.display = 'block';
+      renderCart();
+    };
+
+    // Initialize cart icon badge on page load
+    updateCartIcon();
+  </script>
+
+  <!-- WhatsApp Chat Button -->
+  <a href="https://wa.me/2348102408183?text=Hello%2C%20I%27d%20like%20to%20order%20from%20Delux%20Bite" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp" aria-label="Chat with us on WhatsApp">
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="24" cy="24" r="24" fill="#25D366"/>
+      <path d="M34.6 29.7c-.5-.3-2.8-1.4-3.2-1.6-.4-.2-.7-.3-1 .3-.3.6-1.1 1.6-1.4 1.9-.3.3-.5.4-1 .1-.5-.3-2.1-.8-4-2.6-1.5-1.3-2.5-2.9-2.8-3.4-.3-.5 0-.8.2-1 .2-.2.5-.6.7-.9.2-.3.2-.5.3-.8.1-.3 0-.6 0-.9 0-.3-.9-2.2-1.3-3-.3-.7-.7-.6-1-.6-.3 0-.6 0-.9 0-.3 0-.7.1-1.1.5-.4.4-1.5 1.5-1.5 3.6 0 2.1 1.5 4.1 1.7 4.4.2.3 3 4.7 7.3 6.4 1 .4 1.8.7 2.4.9.9.3 1.7.3 2.3.2.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.2-.4-.3-.9-.6z" fill="#fff"/>
+      <path d="M24 12C17.4 12 12 17.4 12 24c0 2.2.6 4.3 1.7 6.2L12 36l5.9-1.6C19.7 35.4 21.8 36 24 36c6.6 0 12-5.4 12-12S30.6 12 24 12zm0 21c-2 0-4-.5-5.7-1.5l-.4-.2-3.5.9.9-3.4-.2-.4C14.5 28 14 26 14 24c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z" fill="#fff"/>
+    </svg>
+  </a>
+
+  <!-- Back to Top Button -->
+  <button id="back-to-top" aria-label="Back to Top">↑</button>
+
+  <!-- Collapsible FAQ Script & FAQ Search -->
+  <script>
+    document.querySelectorAll('.faq-item h3').forEach(q => {
+      q.onclick = function() {
+        const p = this.nextElementSibling;
+        p.style.display = (p.style.display === 'block') ? 'none' : 'block';
+      };
+      q.nextElementSibling.style.display = 'none';
+    });
+    // FAQ search
+    document.getElementById('faq-search').addEventListener('input', function() {
+      const val = this.value.toLowerCase();
+      document.querySelectorAll('.faq-item').forEach(item => {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(val) ? '' : 'none';
+      });
+    });
+  </script>
+
+  <!-- Testimonials Carousel Script -->
+  <script>
+    const testimonials = document.querySelectorAll('#testimonials-carousel .testimonial-item');
+    let currentTestimonial = 0;
+    function showTestimonial(idx) {
+      testimonials.forEach((el, i) => {
+        el.style.display = (i === idx) ? 'block' : 'none';
+      });
+    }
+    showTestimonial(currentTestimonial);
+    document.getElementById('prev-testimonial').onclick = () => {
+      currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+      showTestimonial(currentTestimonial);
+    };
+    document.getElementById('next-testimonial').onclick = () => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      showTestimonial(currentTestimonial);
+    };
+    setInterval(() => {
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      showTestimonial(currentTestimonial);
+    }, 7000);
+  </script>
+
+  <!-- Newsletter Success Message -->
+  <script>
+    document.querySelector('.newsletter-form').onsubmit = function(e) {
+      e.preventDefault();
+      document.getElementById('newsletter-success').style.display = 'block';
+      setTimeout(() => {
+        document.getElementById('newsletter-success').style.display = 'none';
+      }, 4000);
+      this.reset();
+    };
+  </script>
+
+  <!-- Back to Top Button Script -->
+  <script>
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.onscroll = () => {
+      backToTopBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    };
+    backToTopBtn.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
+  </script>
+
+  <!-- Loading Spinner Script -->
+ 
+
+  <!-- Cookie Consent Banner -->
+  <script>
+    if (!localStorage.getItem('cookieConsent')) {
+      const banner = document.createElement('div');
+      banner.style.position = 'fixed';
+      banner.style.bottom = '0';
+      banner.style.left = '0';
+      banner.style.width = '100%';
+      banner.style.background = '#222';
+      banner.style.color = '#fff';
+      banner.style.padding = '1rem';
+      banner.style.textAlign = 'center';
+      banner.style.zIndex = '9999';
+      banner.innerHTML = 'This site uses cookies to enhance your experience. <button style="margin-left:1rem;background:goldenrod;color:#fff;border:none;padding:6px 18px;border-radius:6px;cursor:pointer;" id="accept-cookies">Accept</button>';
+      document.body.appendChild(banner);
+      document.getElementById('accept-cookies').onclick = function() {
+        localStorage.setItem('cookieConsent', 'true');
+        banner.remove();
+      };
+    }
+  </script>
+  <script>
+    const avatarInput = document.getElementById('user-avatar-input');
+    const avatarImg = document.getElementById('user-avatar');
+    avatarInput.addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          avatarImg.src = e.target.result;
+          localStorage.setItem('userAvatar', e.target.result);
+        };
+        reader.readAsDataURL(this.files[0]);
+      }
+    });
+    // Load avatar from localStorage if available
+    const savedAvatar = localStorage.getItem('userAvatar');
+    if (savedAvatar) {
+      avatarImg.src = savedAvatar;
+    }
+  
+  
+    const darkBtn = document.getElementById('dark-mode-toggle');
+    darkBtn.onclick = function() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    };
+    // Load preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+    }
+  </script>
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Dark mode toggle
+  const darkBtn = document.getElementById('dark-mode-toggle');
+  if (darkBtn) {
+    darkBtn.onclick = function() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    };
+    // Load preference
+    if (localStorage.getItem('darkMode') === 'true') {
+      document.body.classList.add('dark-mode');
+    }
+  }
+
+  // Hamburger menu toggle
+  const hamburger = document.getElementById('hamburger-menu');
+  const navUl = document.getElementById('main-nav');
+  if (hamburger && navUl) {
+    hamburger.onclick = function() {
+      navUl.classList.toggle('open');
+    };
+    // Close menu when clicking a link (for better UX)
+    navUl.querySelectorAll('a').forEach(link => {
+      link.onclick = () => navUl.classList.remove('open');
+    });
+  }
+
+  // Avatar upload and load from localStorage
+  const avatarInput = document.getElementById('user-avatar-input');
+  const avatarImg = document.getElementById('user-avatar');
+  if (avatarInput && avatarImg) {
+    avatarInput.addEventListener('change', function() {
+      if (this.files && this.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          avatarImg.src = e.target.result;
+          localStorage.setItem('userAvatar', e.target.result);
+        };
+        reader.readAsDataURL(this.files[0]);
+      }
+    });
+    // Load avatar from localStorage if available
+    const savedAvatar = localStorage.getItem('userAvatar');
+    if (savedAvatar) {
+      avatarImg.src = savedAvatar;
+    }
+  }
+});
+
+</script>
+
+<script>
+  const galleryImages = document.querySelectorAll('#animated-gallery-carousel .gallery-image');
+  let currentGallery = 0;
+  function showGallery(idx) {
+    galleryImages.forEach((img, i) => {
+      img.style.display = (i === idx) ? 'block' : 'none';
+    });
+  }
+  showGallery(currentGallery);
+  document.getElementById('prev-gallery').onclick = () => {
+    currentGallery = (currentGallery - 1 + galleryImages.length) % galleryImages.length;
+    showGallery(currentGallery);
+  };
+  document.getElementById('next-gallery').onclick = () => {
+    currentGallery = (currentGallery + 1) % galleryImages.length;
+    showGallery(currentGallery);
+  };
+  setInterval(() => {
+    currentGallery = (currentGallery + 1) % galleryImages.length;
+    showGallery(currentGallery);
+  }, 7000);
+
+
+</script>
+
+
+

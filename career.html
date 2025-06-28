@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place Your Order - Delux Bite</title>
+  <link rel="icon" type="image/png" href="assets/log.jpg" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: #111;
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .order-container {
+      background: #222;
+      border-radius: 14px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+      padding: 2.5rem 2rem 2rem 2rem;
+      max-width: 420px;
+      width: 100%;
+      margin: 3rem auto 2rem auto;
+      text-align: center;
+    }
+    .place-order {
+      color: goldenrod;
+      margin-bottom: 0.5rem;
+      font-size: 2rem;
+    }
+    .place-order-sub {
+      color: #ccc;
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+    .contact-form label {
+      display: block;
+      text-align: left;
+      margin-bottom: 0.3rem;
+      color: #fff;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 0.8rem;
+      border: none;
+      border-radius: 7px;
+      background: #333;
+      color: #fff;
+      font-size: 1rem;
+      resize: none;
+      outline: none;
+      transition: background 0.2s;
+    }
+    .contact-form input:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      background: #444;
+    }
+    .contact-form button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, goldenrod 60%, orange 100%);
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      box-shadow: 0 2px 8px rgba(218,165,32,0.08);
+    }
+    .contact-form button:hover {
+      background: linear-gradient(90deg, orange 60%, goldenrod 100%);
+      transform: scale(1.04);
+    }
+    @media (max-width: 600px) {
+      .order-container {
+        padding: 1.2rem 0.5rem 1rem 0.5rem;
+        max-width: 98vw;
+      }
+    }
+
+    /* Header Section Styles */
+.main-header {
+  width: 100%;
+  background: #bcc3c7;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100vw;
+  padding: 0 0;
+  height: 90px;
+}
+.site-logo {
+  display: flex;
+  align-items: center;
+  background: #FF2D2D;
+  height: 100%;
+  padding: 0 32px;
+}
+.logo-img {
+  height: 70px;
+  width: auto;
+  border-radius: 0;
+  background: none;
+}
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 32px;
+}
+.main-nav ul li a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+.main-nav ul li a:hover {
+  color: #FFD700;
+}
+.order-online-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FF2D2D;
+  min-width: 180px;
+  max-width: 220px;
+  margin-left: 24px;
+  box-shadow: none;
+  padding: 0.7rem 1.3rem 0 0.7rem;
+  position: relative;
+}
+.order-online-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order-online-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  display: block;
+  margin-top: 0.2rem;
+  text-align: left;
+}
+.order-online-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.order-online-hours {
+  display: block;
+  width: 100%;
+  background: #FFD700;
+  color: #FF2D2D;
+  font-size: 1.15rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 0 0 0 0;
+  margin-top: 6px;
+  padding: 2px 0 2px 0;
+  letter-spacing: 1px;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  z-index: 1201;
+}
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 28px;
+  background: #b8860b;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Responsive styles */
+@media (max-width: 1100px) {
+  .main-nav ul {
+    gap: 1rem;
+    padding-left: 8px;
+  }
+  .site-logo {
+    padding: 0 10px;
+  }
+  .order-online-banner {
+    min-width: 140px;
+    padding: 0.5rem 0.7rem 0 0.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .nav-bar {
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    padding: 0 0.5rem;
+    position: relative;
+  }
+  .site-logo {
+    padding: 0 8px;
+    min-width: 60px;
+  }
+  .logo-img {
+    height: 48px;
+  }
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+    margin-right: 8px;
+  }
+  .main-nav {
+    width: 100%;
+  }
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background:black;
+    box-shadow: 0 4px 24px rgba(218,165,32,0.12);
+    border-radius: 10px;
+    width: 180px;
+    padding: 1rem 0;
+    z-index: 1200;
+    gap: 0;
+    align-items: flex-start;
+  }
+  .main-nav ul.open {
+    display: flex;
+  }
+  .main-nav ul li {
+    margin: 0.5rem 0;
+    text-align: left;
+    width: 100%;
+    padding-left: 1.2rem;
+  }
+  .order-online-banner {
+    min-width: 120px;
+    max-width: 160px;
+    padding: 0.3rem 0.3rem 0 0.3rem;
+    margin: 0 0 0 8px;
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+  .order-online-title {
+    font-size: 1rem;
+  }
+  .order-online-hours {
+    font-size: 0.97rem;
+  }
+}
+@media (max-width: 600px) {
+  .order-online-banner {
+    min-width: 100px;
+    max-width: 120px;
+    padding: 0.2rem 0.2rem 0 0.2rem;
+    font-size: 0.85rem;
+  }
+  .order-online-title {
+    font-size: 0.85rem;
+  }
+  .order-online-hours {
+    font-size: 0.85rem;
+  }
+}
+
+.how-we-work-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem 3rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.how-we-work-card {
+  flex: 1 1 220px;
+  min-width: 220px;
+  max-width: 260px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  text-align: center;
+  margin-bottom: 0;
+}
+@media (max-width: 700px) {
+  .how-we-work-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2rem;
+    margin: 1.2rem 0;
+  }
+  .how-we-work-card {
+    min-width: 0;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+}
+</style>
+</head>
+
+  <!-- HEADER SECTION -->
+  <header class="main-header">
+    <div class="nav-bar">
+      <a href="index.html" class="site-logo" aria-label="Home">
+        <img src="assets/log.jpg" alt="Logo" class="logo-img">
+      </a>
+      <!-- Hamburger button for mobile -->
+      <button class="hamburger" id="hamburger-menu" aria-label="Open Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav">
+        <ul id="main-nav">
+          <li><a href="index.html#about">Home</a></li>
+          <li><a href="index.html#menu">Menu</a></li>
+          <li><a href="promo.html">Promo</a></li>
+          <li><a href="index.html#reservation">Reservation</a></li>
+          <li><a href="second.html">Feedback</a></li>
+          <li><a href="index.html#FAQ">FAQ</a></li>
+          <li><a href="index.html#career">Career</a></li>
+        </ul>
+      </nav>
+      <div class="order-online-banner">
+        <span class="order-online-icon">
+          <!-- ...SVG icon... -->
+        </span>
+        <div class="order-online-text">
+          <span class="order-online-title">ORDER<br>ONLINE TIME</span>
+          <span class="order-online-hours">9am - 4:30pm daily</span>
+        </div>
+      </div>
+    </div>
+  </header>
+<body>
+    <section class="how-we-work" style="max-width:1100px;margin:2rem auto;">
+        <h2 style="color:#FF2D2D;font-weight:bold;text-align:center;">How we work</h2>
+        <p style="color:white;text-align:center;max-width:700px;margin:0 auto 2rem auto;padding:0.7rem 1rem;border-radius:8px;">
+          Discover a work environment where innovation meets collaboration.
+        </p>
+        <div class="how-we-work-grid">
+          <div class="how-we-work-card">
+            <i class="fas fa-users" style="color:#FF2D2D;font-size:2rem;margin-bottom:0.5rem;"></i>
+            <h4 style="margin:0.5rem 0 0.3rem 0;color:#222;">Diversity & Inclusion</h4>
+            <p style="color:#222;font-size:1rem;">We appreciate diversity, respect opinions, and foster collaboration across board.</p>
+          </div>
+          <div class="how-we-work-card">
+            <i class="fas fa-balance-scale" style="color:#FFD700;font-size:2rem;margin-bottom:0.5rem;"></i>
+            <h4 style="margin:0.5rem 0 0.3rem 0;color:#222;">Work-life Balance</h4>
+            <p style="color:#222;font-size:1rem;">At Delux Bite, balance is a right and part of our innovative work environment.</p>
+          </div>
+          <div class="how-we-work-card">
+            <i class="fas fa-hand-holding-heart" style="color:#FF2D2D;font-size:2rem;margin-bottom:0.5rem;"></i>
+            <h4 style="margin:0.5rem 0 0.3rem 0;color:#222;">Everyone is a Contributor</h4>
+            <p style="color:#222;font-size:1rem;">At Delux Bite, each member plays a vital role in our shared success. Together, we achieve big goals.</p>
+          </div>
+          <div class="how-we-work-card">
+            <i class="fas fa-award" style="color:#FFD700;font-size:2rem;margin-bottom:0.5rem;"></i>
+            <h4 style="margin:0.5rem 0 0.3rem 0;color:#222;">Tailored Reward System</h4>
+            <p style="color:#222;font-size:1rem;">We recognize the performance of every team member and reward results in meaningful ways.</p>
+          </div>
+        </div>
+      </section>    <!-- Delux Bite image grid -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:2rem 0;">
+          <img src="assets/work.jpg" alt="Delux Bite Teamwork" style="width:100%;border-radius:8px;">
+          <img src="assets/work.jpg" alt="Delux Bite Staff" style="width:100%;border-radius:8px;">
+          <img src="assets/work.jpg" alt="Delux Bite Office" style="width:100%;border-radius:8px;">
+          <img src="assets/work.jpg" alt="Delux Bite Service" style="width:100%;border-radius:8px;">
+          <img src="assets/log.jpg" alt="Delux Bite Logo" style="width:100%;border-radius:8px;background:#fff;padding:1rem;">
+          <img src="assets/work.jpg" alt="Delux Bite Meeting" style="width:100%;border-radius:8px;">
+        </div>
+      </section>
+      <section class="employment-form-section">
+        <h2 style="color:#FFD700;text-align:center;margin-bottom:1.2rem;">Employment Application</h2>
+        <form class="employment-form" name="employment" method="POST" data-netlify="true" data-netlify-recaptcha="true" enctype="multipart/form-data">
+          <input type="hidden" name="form-name" value="employment">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" name="fullname" required placeholder="Enter your full name">
+      
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" required placeholder="Enter your email address">
+      
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+      
+          <label for="position">Position Interested In</label>
+          <input type="text" id="position" name="position" required placeholder="e.g. Chef, Waiter, Manager, Delivery Person">
+      
+          <label for="cv">Upload CV</label>
+          <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required>
+      
+          <label for="coverletter">Cover Letter</label>
+          <textarea id="coverletter" name="coverletter" rows="4" placeholder="Write a brief cover letter (optional)"></textarea>
+      
+          <div data-netlify-recaptcha="true" style="margin:1.2rem 0;"></div>
+      
+          <button type="submit">Submit Application</button>
+        </form>
+      </section>
+      <style>
+      .employment-form-section {
+        width: 100%;
+        max-width: 600px;
+        margin: 2rem auto 3rem auto;
+        background: #222;
+        padding: 2rem 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+        box-sizing: border-box;
+      }
+      .employment-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+      }
+      .employment-form label {
+        color: #fff;
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+      }
+      .employment-form input[type="text"],
+      .employment-form input[type="email"],
+      .employment-form input[type="tel"],
+      .employment-form input[type="file"],
+      .employment-form textarea {
+        padding: 10px;
+        border-radius: 6px;
+        border: none;
+        background: #333;
+        color: #fff;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .employment-form input[type="file"] {
+        background: #222;
+        color: #FFD700;
+        padding: 8px 0;
+      }
+      .employment-form textarea {
+        resize: vertical;
+        min-height: 80px;
+      }
+      .employment-form button {
+        background: linear-gradient(90deg,#FFD700 60%,#FF2D2D 100%);
+        color: #222;
+        font-weight: bold;
+        padding: 12px;
+        border: none;
+        border-radius: 6px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background 0.2s, transform 0.2s;
+        margin-top: 0.5rem;
+        width: 100%;
+      }
+      .employment-form button:hover {
+        background: linear-gradient(90deg,#FF2D2D 60%,#FFD700 100%);
+        transform: scale(1.03);
+      }
+      @media (max-width: 700px) {
+        .employment-form-section {
+          padding: 1.2rem 0.5rem;
+          max-width: 100vw;
+          width: 100vw;
+          border-radius: 0;
+        }
+        .employment-form {
+          width: 100%;
+        }
+      }
+      </style>
+  <script src="script.js"></script>
+
+  <!-- Add this script just before </body> -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger-menu');
+    const navUl = document.getElementById('main-nav');
+    if (hamburger && navUl) {
+      hamburger.onclick = function() {
+        navUl.classList.toggle('open');
+      };
+      navUl.querySelectorAll('a').forEach(link => {
+        link.onclick = () => navUl.classList.remove('open');
+      });
+    }
+  });
+  </script>
+</body>
+</html>

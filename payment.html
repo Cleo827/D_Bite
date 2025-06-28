@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delux Bite - Payment</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: #fffbe7;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    .payment-wrapper {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .payment-card {
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 4px 24px rgba(218,165,32,0.10);
+      max-width: 420px;
+      width: 100%;
+      padding: 2.2rem 1.5rem 2rem 1.5rem;
+      margin: 2rem 1rem;
+      text-align: center;
+      position: relative;
+    }
+    .bank-info {
+      background: #fff8e1;
+      border: 1px solid #ffd966;
+      border-radius: 10px;
+      padding: 1.2rem 1rem 1rem 1rem;
+      margin-bottom: 1.7rem;
+      font-size: 1.08rem;
+      color: #222;
+      text-align: left;
+    }
+    .bank-info strong {
+      color: #b8860b;
+    }
+    .account-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 0.5rem;
+    }
+    .copy-btn {
+      background: #ffd966;
+      color: #222;
+      border: none;
+      border-radius: 5px;
+      padding: 4px 12px;
+      cursor: pointer;
+      font-size: 0.98rem;
+      transition: background 0.2s;
+    }
+    .copy-btn:hover {
+      background: #ffe599;
+    }
+    .manual-form {
+      margin-top: 1.2rem;
+      text-align: left;
+    }
+    .manual-form label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 500;
+      color: #b8860b;
+    }
+    .manual-form input {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1.1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: #fffbe7;
+      transition: border 0.2s;
+    }
+    .manual-form input:focus {
+      border: 1.5px solid #b8860b;
+      outline: none;
+    }
+    .payment-btn {
+      background: linear-gradient(90deg, goldenrod 60%, orange 100%);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 28px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(218,165,32,0.08);
+      transition: background 0.3s, transform 0.2s;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    .payment-btn:hover {
+      background: linear-gradient(90deg, orange 60%, goldenrod 100%);
+      transform: scale(1.04);
+    }
+    .payment-success {
+      display: none;
+      color: green;
+      font-weight: bold;
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      text-align: center;
+      animation: fadeIn 0.7s;
+    }
+    .payment-success .checkmark {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 8px;
+      font-size: 1.5rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+    @media (max-width: 500px) {
+      .payment-card {
+        padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+      }
+      .bank-info {
+        font-size: 0.98rem;
+        padding: 0.8rem 0.5rem 0.7rem 0.5rem;
+      }
+    }
+
+    .whatsapp-float {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  bottom: 24px;
+  right: 24px;
+  background: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  transition: box-shadow 0.2s, transform 0.2s;
+  text-decoration: none;
+}
+.whatsapp-float:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+  transform: scale(1.08);
+  background: #1ebe57;
+}
+.whatsapp-float svg {
+  display: block;
+  width: 32px;
+  height: 32px;
+}
+
+/* Header Section Styles */
+.main-header {
+  width: 100%;
+  background: #bcc3c7;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100vw;
+  padding: 0 0;
+  height: 90px;
+}
+.site-logo {
+  display: flex;
+  align-items: center;
+  background: #FF2D2D;
+  height: 100%;
+  padding: 0 32px;
+}
+.logo-img {
+  height: 70px;
+  width: auto;
+  border-radius: 0;
+  background: none;
+}
+.main-nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 32px;
+}
+.main-nav ul li a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.2s;
+}
+.main-nav ul li a:hover {
+  color: #FFD700;
+}
+.order-online-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FF2D2D;
+  min-width: 180px;
+  max-width: 220px;
+  margin-left: 24px;
+  box-shadow: none;
+  padding: 0.7rem 1.3rem 0 0.7rem;
+  position: relative;
+}
+.order-online-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.order-online-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  display: block;
+  margin-top: 0.2rem;
+  text-align: left;
+}
+.order-online-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.order-online-hours {
+  display: block;
+  width: 100%;
+  background: #FFD700;
+  color: #FF2D2D;
+  font-size: 1.15rem;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 0 0 0 0;
+  margin-top: 6px;
+  padding: 2px 0 2px 0;
+  letter-spacing: 1px;
+}
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+  z-index: 1201;
+}
+.hamburger span {
+  display: block;
+  height: 4px;
+  width: 28px;
+  background: #b8860b;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* Responsive styles */
+@media (max-width: 1100px) {
+  .main-nav ul {
+    gap: 1rem;
+    padding-left: 8px;
+  }
+  .site-logo {
+    padding: 0 10px;
+  }
+  .order-online-banner {
+    min-width: 140px;
+    padding: 0.5rem 0.7rem 0 0.5rem;
+  }
+}
+@media (max-width: 900px) {
+  .nav-bar {
+    flex-direction: row;
+    align-items: center;
+    height: auto;
+    padding: 0 0.5rem;
+    position: relative;
+  }
+  .site-logo {
+    padding: 0 8px;
+    min-width: 60px;
+  }
+  .logo-img {
+    height: 48px;
+  }
+  .hamburger {
+    display: flex;
+    margin-left: auto;
+    margin-right: 8px;
+  }
+  .main-nav {
+    width: 100%;
+  }
+  .main-nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: black;
+    box-shadow: 0 4px 24px rgba(218,165,32,0.12);
+    border-radius: 10px;
+    width: 180px;
+    padding: 1rem 0;
+    z-index: 1200;
+    gap: 0;
+    align-items: flex-start;
+  }
+  .main-nav ul.open {
+    display: flex;
+  }
+  .main-nav ul li {
+    margin: 0.5rem 0;
+    text-align: left;
+    width: 100%;
+    padding-left: 1.2rem;
+  }
+  .order-online-banner {
+    min-width: 120px;
+    max-width: 160px;
+    padding: 0.3rem 0.3rem 0 0.3rem;
+    margin: 0 0 0 8px;
+    flex-direction: row;
+    align-items: center;
+    font-size: 0.95rem;
+  }
+  .order-online-title {
+    font-size: 1rem;
+  }
+  .order-online-hours {
+    font-size: 0.97rem;
+  }
+}
+@media (max-width: 600px) {
+  .order-online-banner {
+    min-width: 100px;
+    max-width: 120px;
+    padding: 0.2rem 0.2rem 0 0.2rem;
+    font-size: 0.85rem;
+  }
+  .order-online-title {
+    font-size: 0.85rem;
+  }
+  .order-online-hours {
+    font-size: 0.85rem;
+  }
+}
+  </style>
+</head>
+<!-- HEADER SECTION -->
+<header class="main-header">
+  <div class="nav-bar">
+    <a href="index.html" class="site-logo" aria-label="Home">
+      <img src="assets/log.jpg" alt="Logo" class="logo-img">
+    </a>
+    <!-- Hamburger button for mobile -->
+    <button class="hamburger" id="hamburger-menu" aria-label="Open Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="main-nav">
+      <ul id="main-nav">
+        <li><a href="index.html#about">Home</a></li>
+        <li><a href="index.html#menu">Menu</a></li>
+        <li><a href="promo.html">Promo</a></li>
+        <li><a href="index.html#reservation">Reservation</a></li>
+        <li><a href="second.html">Feedback</a></li>
+        <li><a href="index.html#FAQ">FAQ</a></li>
+        <li><a href="index.html#career">Career</a></li>
+      </ul>
+    </nav>
+    <div class="order-online-banner">
+      <span class="order-online-icon">
+        <!-- ...SVG icon... -->
+      </span>
+      <div class="order-online-text">
+        <span class="order-online-title">ORDER<br>ONLINE TIME</span>
+        <span class="order-online-hours">9am - 4:30pm daily</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<body>
+  <div class="payment-wrapper">
+    <div class="payment-card">
+      <h2 style="color:#b8860b;margin-bottom:1.2rem;">Bank Transfer</h2>
+      <div class="bank-info">
+        <div><strong>Bank:</strong> United Bank For Africa (UBA)</div>
+        <div><strong>Account Name:</strong> Delux Bite Foods</div>
+        <div class="account-row">
+          <strong>Account Number:</strong>
+          <span id="accountNumber" style="font-family:monospace;font-size:1.1em;">1024358827</span>
+          <button class="copy-btn" onclick="copyAccountNumber()">Copy</button>
+        </div>
+      </div>
+      <div style="margin-bottom:1.5rem;color:#444;">
+        Please make your payment to the account above.<br>
+        <span style="color:#b8860b;">Then enter your payment details below for confirmation.</span>
+      </div>
+      <form class="manual-form" name="payment-confirmation" method="POST" data-netlify="true" data-netlify-recaptcha="true" enctype="multipart/form-data" style="margin-top:1.2rem;text-align:left;">
+        <input type="hidden" name="form-name" value="payment-confirmation">
+        <label for="payerName">Your Name</label>
+        <input type="text" id="payerName" name="payerName" placeholder="enter your name" required>
+      
+        <label for="amount">Amount Paid (₦)</label>
+        <input type="number" id="amount" name="amount" min="1" placeholder="enter amount paid" required>
+      
+        <label for="reference">Payment Reference / Description</label>
+        <input type="text" id="reference" name="reference" placeholder="e.g. Enter narration used during transfer or phone number" required>
+      
+        <div data-netlify-recaptcha="true" style="margin:1.2rem 0;"></div>
+      
+        <button type="submit" class="payment-btn">Submit Payment Info</button>
+      </form>
+      <div class="payment-success" id="paymentSuccess" style="display:none;">
+        <span class="checkmark">✔️</span>
+        Thank you! Your payment info has been received.<br>
+        We will confirm and process your order shortly.
+      </div>
+    </div>
+  </div>
+
+  <!-- whats code -->
+  <a href="https://wa.me/2348102408183?text=Hello%2C%20am%27d%20seen%20an%20erro%20message%20after%20submiting%20the%20form" class="whatsapp-float" target="_blank" title="Chat with us on WhatsApp" aria-label="Chat with us on WhatsApp">
+    <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="24" cy="24" r="24" fill="#25D366"/>
+      <path d="M34.6 29.7c-.5-.3-2.8-1.4-3.2-1.6-.4-.2-.7-.3-1 .3-.3.6-1.1 1.6-1.4 1.9-.3.3-.5.4-1 .1-.5-.3-2.1-.8-4-2.6-1.5-1.3-2.5-2.9-2.8-3.4-.3-.5 0-.8.2-1 .2-.2.5-.6.7-.9.2-.3.2-.5.3-.8.1-.3 0-.6 0-.9 0-.3-.9-2.2-1.3-3-.3-.7-.7-.6-1-.6-.3 0-.6 0-.9 0-.3 0-.7.1-1.1.5-.4.4-1.5 1.5-1.5 3.6 0 2.1 1.5 4.1 1.7 4.4.2.3 3 4.7 7.3 6.4 1 .4 1.8.7 2.4.9.9.3 1.7.3 2.3.2.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.2-.4-.3-.9-.6z" fill="#fff"/>
+      <path d="M24 12C17.4 12 12 17.4 12 24c0 2.2.6 4.3 1.7 6.2L12 36l5.9-1.6C19.7 35.4 21.8 36 24 36c6.6 0 12-5.4 12-12S30.6 12 24 12zm0 21c-2 0-4-.5-5.7-1.5l-.4-.2-3.5.9.9-3.4-.2-.4C14.5 28 14 26 14 24c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10z" fill="#fff"/>
+    </svg>
+  </a>
+  <script>
+    function copyAccountNumber() {
+      const accNum = document.getElementById('accountNumber').innerText;
+      navigator.clipboard.writeText(accNum);
+      alert('Account number copied!');
+    }
+    // No access key check, form is always open
+    // Web3Forms will handle the form submission
+  </script>
+
+  <!-- Add this script just before </body> -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger-menu');
+    const navUl = document.getElementById('main-nav');
+    if (hamburger && navUl) {
+      hamburger.onclick = function() {
+        navUl.classList.toggle('open');
+      };
+      navUl.querySelectorAll('a').forEach(link => {
+        link.onclick = () => navUl.classList.remove('open');
+      });
+    }
+  });
+  </script>
+</body>
+</html>
